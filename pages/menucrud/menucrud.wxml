@@ -1,0 +1,8 @@
+<!--pages/menucrud.wxml-->
+
+<view class='container'>
+<view class='flow_right'>
+  <button class='addbtn' bindtap='jumpToAdd'>新增菜谱</button>
+</view>
+</view>
+

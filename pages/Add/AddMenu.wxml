@@ -1,0 +1,56 @@
+<!--pages/Add/AddMenu.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset" class='container'>
+  <view class='flow_right'>
+    <text class='labeltext'>菜名</text>
+    <input name="dishname" class='inputtext' type='text' placeholder="输入菜名"></input>
+
+  </view>
+
+  <view class='flow_right'>
+    <text class='labeltext'>主要食材</text>
+    <input name="dishmaterials" class='inputtext' type='text' placeholder="输入菜名"></input>
+
+  </view>
+
+  <view class='flow_right'>
+    <text class='labeltext'>早餐</text>
+    <label class='inputtext'>
+      <checkbox name="isBreakfast" value="{{breakfast.value}}" checked="{{breakfast.checked}}" />
+    </label>
+  </view>
+
+  <view class='flow_right'>
+    <text class='labeltext'>季节</text>
+    <view class="inputtext">
+      <picker name="dishSeason" bindchange="bindSeasonPickerChange" value="{{seasonindex}}" range="{{season}}">
+        <view class="picker">
+          {{season[seasonindex]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+
+
+  <view class='flow_right'>
+    <text class='labeltext'>荤</text>
+    <slider name="meatSlide" class='inputtext' bindchange="sliderMeatChange" min="0" max="10" show-value/>
+
+  </view>
+
+  <view class='flow_right'>
+    <text class='labeltext'>素</text>
+    <slider name="vegSlide" class='inputtext' bindchange="sliderVegChange" min="0" max="10" show-value/>
+
+  </view>
+
+  <view class='flow_right'>
+    <text class='labeltext'>汤</text>
+    <slider name="soupSlide" class='inputtext' bindchange="sliderSoupChange" min="0" max="10" show-value/>
+
+  </view>
+
+  <view class='flow_right'>
+    <button formType="reset">重置</button>
+    <button formType="submit"  >提交</button>
+  </view>
+</form>

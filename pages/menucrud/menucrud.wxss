@@ -1,0 +1,12 @@
+/* pages/menucrud.wxss */
+
+.container{
+  padding: 50rpx 0;
+}
+
+.flow_right{
+  width: 80%;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items:flex-start;
+}

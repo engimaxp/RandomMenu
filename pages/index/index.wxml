@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+    <button bindtap='jumpToMenuCrud'>查看全部菜单</button>
+  </view>
+</view>
