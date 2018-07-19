@@ -1,12 +1,82 @@
 /* pages/menucrud.wxss */
 
-.container{
+.container {
   padding: 50rpx 0;
 }
 
-.flow_right{
+.flow_right {
   width: 80%;
   flex-direction: row-reverse;
   justify-content: space-between;
-  align-items:flex-start;
+  align-items: flex-start;
+}
+
+.sectionTable {
+  height: 400px;
+  width: 90%;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionData {
+  display: inline-block;
+  text-align: center;
+}
+
+.width10 {
+  width: 10%;
+}
+
+.width20 {
+  width: 20%;
+}
+
+.width25 {
+  width: 23%;
+}
+
+.width30 {
+  width: 30%;
+}
+
+.width40 {
+  width: 40%;
+}
+
+.width50 {
+  width: 50%;
+}
+
+.width60 {
+  width: 60%;
+}
+
+.searchContainer {
+  padding-top:50rpx; 
+  padding-bottom:50rpx; 
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+  align-items: center
+}
+
+.searchbtn {
+  width: 30%;
+  display: inline-block;
+}
+
+.specialhead{
+  background: orange;
+  color: white;
+}
+
+.special1{
+  background: #f6f8f9;
 }

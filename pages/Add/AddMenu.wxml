@@ -2,50 +2,40 @@
 <form bindsubmit="formSubmit" bindreset="formReset" class='container'>
   <view class='flow_right'>
     <text class='labeltext'>菜名</text>
-    <input name="dishname" class='inputtext' type='text' placeholder="输入菜名"></input>
+    <input name="N" class='inputtext' type='text' placeholder="输入菜名" value="{{N}}"></input>
 
   </view>
 
   <view class='flow_right'>
     <text class='labeltext'>主要食材</text>
-    <input name="dishmaterials" class='inputtext' type='text' placeholder="输入菜名"></input>
+    <input name="MA" class='inputtext' type='text' placeholder="食材1,食材2" value="{{MA}}"></input>
 
   </view>
 
   <view class='flow_right'>
     <text class='labeltext'>早餐</text>
-    <label class='inputtext'>
-      <checkbox name="isBreakfast" value="{{breakfast.value}}" checked="{{breakfast.checked}}" />
+    <checkbox-group class='inputtext' name="B">
+    <label >
+      <checkbox value="T" checked="{{B}}"/>
     </label>
+    </checkbox-group>
   </view>
-
-  <view class='flow_right'>
-    <text class='labeltext'>季节</text>
-    <view class="inputtext">
-      <picker name="dishSeason" bindchange="bindSeasonPickerChange" value="{{seasonindex}}" range="{{season}}">
-        <view class="picker">
-          {{season[seasonindex]}}
-        </view>
-      </picker>
-    </view>
-  </view>
-
 
   <view class='flow_right'>
     <text class='labeltext'>荤</text>
-    <slider name="meatSlide" class='inputtext' bindchange="sliderMeatChange" min="0" max="10" show-value/>
+    <slider name="MT" class='inputtext' value='{{MT}}' bindchange="sliderMeatChange" min="0" max="10" show-value/>
 
   </view>
 
   <view class='flow_right'>
     <text class='labeltext'>素</text>
-    <slider name="vegSlide" class='inputtext' bindchange="sliderVegChange" min="0" max="10" show-value/>
+    <slider name="VE" class='inputtext' value='{{VE}}' bindchange="sliderVegChange" min="0" max="10" show-value/>
 
   </view>
 
   <view class='flow_right'>
     <text class='labeltext'>汤</text>
-    <slider name="soupSlide" class='inputtext' bindchange="sliderSoupChange" min="0" max="10" show-value/>
+    <slider name="SP" class='inputtext' value='{{SP}}' bindchange="sliderSoupChange" min="0" max="10" show-value/>
 
   </view>
 

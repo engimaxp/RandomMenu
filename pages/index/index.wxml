@@ -1,7 +1,78 @@
 <!--index.wxml-->
 <view class="container">
-    <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-    <button bindtap='jumpToMenuCrud'>查看全部菜单</button>
+  <view class='flow_right'>
+    <button class='addbtn' bindtap='jumpToMenuCrud'>查看全部菜单</button>
+  </view>
+
+  <view class='flow_right'>
+    <text class='title' style='padding-top:0rpx;'>最近的菜单:</text>
+    <button bindtap="switchdisplay">切换</button>
+  </view>
+
+  <view style='width:90%'>
+    <view class='section specialhead'>
+      <view class="sectionData width25">周/顿</view>
+      <view class="sectionData width25">早</view>
+      <view class="sectionData width25">中</view>
+      <view class="sectionData width25">晚</view>
+    </view>
+  </view>
+  <scroll-view scroll-y class='sectionTable'>
+    <view wx:for="{{sectionData}}" class='section {{index%2===0?"special1":"special2"}}' bindlongpress='deletehistory' id='{{item.DT}}'>
+      <view class="sectionData width25">{{item.DT}}</view>
+      <view class="sectionData width25">
+        <view wx:for="{{item.B}}">
+          <view class='childSection {{switch?"hide":"show"}}'>{{item.N}}</view>
+          <view class='childSection {{switch?"show":"hide"}}'>{{item.MA}}</view>
+        </view>
+      </view>
+      <view class="sectionData width25">
+        <view wx:for="{{item.L}}">
+          <view class='childSection {{switch?"hide":"show"}}'>{{item.N}}</view>
+          <view class='childSection {{switch?"show":"hide"}}'>{{item.MA}}</view>
+        </view>
+      </view>
+      <view class="sectionData width25">
+        <view wx:for="{{item.D}}">
+          <view class='childSection {{switch?"hide":"show"}}'>{{item.N}}</view>
+          <view class='childSection {{switch?"show":"hide"}}'>{{item.MA}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class='flow_right'>
+    <text class='title'>明天吃什么？</text>
+  </view>
+
+  <view style='width:90%;'>
+    <view class='section specialhead'>
+      <view class="sectionData width30" bindtap='selectColumn' data-M="B">早</view>
+      <view class="sectionData width30" bindtap='selectColumn' data-M="L">中</view>
+      <view class="sectionData width30" bindtap='selectColumn' data-M="D">晚</view>
+    </view>
+    <view wx:for="{{nextDayData}}" class='section'>
+      <view class="sectionData width30">
+        <view wx:for="{{item.B}}">
+          <view class='childSection {{index%2===1?"special1":"special2"}} {{item.S?"selected":""}}' data-M="B" bindtap='selectOne' id='{{item.N}}'>{{item.N}}</view>
+        </view>
+      </view>
+      <view class="sectionData width30">
+        <view wx:for="{{item.L}}">
+          <view class='childSection {{index%2===1?"special1":"special2"}} {{item.S?"selected":""}}' data-M="L" bindtap='selectOne' id='{{item.N}}'>{{item.N}}</view>
+        </view>
+      </view>
+      <view class="sectionData width30">
+        <view wx:for="{{item.D}}">
+          <view class='childSection {{index%2===1?"special1":"special2"}} {{item.S?"selected":""}}' data-M="D" bindtap='selectOne' id='{{item.N}}'>{{item.N}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class='flow_right2'>
+    <button bindtap="reset">重置</button>
+    <button bindtap='randommenu'>随机</button>
+    <button bindtap="confirm">确定</button>
   </view>
 </view>

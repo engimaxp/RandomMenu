@@ -19,3 +19,115 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.title{
+  text-align: center;
+  display: block;
+  padding-top:30rpx;
+}
+.container {
+  padding: 30rpx 0;
+}
+
+.flow_right {
+  width: 80%;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30rpx;
+}
+.flow_right2{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+  align-items:baseline;
+  padding: 30rpx 0;
+}
+.sectionTable {
+  height: 500rpx;
+  width: 90%;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionData {
+  display: inline-block;
+  text-align: center;
+}
+
+.show{display: inline-block;}
+.hide{display: none;}
+
+.childSection.selected{
+  background: #45bcf9;
+  color: white;
+}
+
+.childSection2{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.childSection3{
+  display: block;
+}
+
+.width10 {
+  width: 10%;
+}
+
+.width20 {
+  width: 20%;
+}
+
+.width25 {
+  width: 23%;
+}
+
+.width30 {
+  width: 30%;
+}
+
+.width40 {
+  width: 40%;
+}
+
+.width50 {
+  width: 50%;
+}
+
+.width60 {
+  width: 60%;
+}
+
+.searchContainer {
+  padding-top:30rpx; 
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+  align-items: center
+}
+
+.searchbtn {
+  width: 30%;
+  display: inline-block;
+}
+
+.specialhead{
+  background: orange;
+  color: white;
+}
+
+.special1{
+  background: #f6f8f9;
+}

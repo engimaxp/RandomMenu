@@ -1,8 +1,46 @@
 <!--pages/menucrud.wxml-->
 
 <view class='container'>
-<view class='flow_right'>
-  <button class='addbtn' bindtap='jumpToAdd'>新增菜谱</button>
+  <view class='flow_right'>
+    <button class='addbtn' bindtap='jumpToAdd'>新增菜谱</button>
+  </view>
+  <view class='searchContainer'>
+    <input type='text' id='searchbox' placeholder='输入菜名或材料名' style='border-bottom:1px solid black' bindinput="bindKeyInput"></input>
+    <button class='searchbtn' bindtap='search'>查找</button>
+  </view>
+  <view style='width:90%'>
+<view class='section specialhead'>
+      <view class="sectionData width25">菜名</view>
+      <view class="sectionData width25">材料</view>
+      <view class="sectionData width20" bindtap='breakfasttap'>
+        早餐
+      </view>
+      <view class="sectionData width10" bindtap='mtSorttap'>
+        荤
+      </view>
+      <view class="sectionData width10" bindtap='veSorttap'>
+        素
+      </view>
+      <view class="sectionData width10" bindtap='spSorttap'>
+        汤
+      </view>
+    </view>
+  </view>
+  <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" class='sectionTable'>
+    <view wx:for="{{sectionData}}" class='section {{index%2===0?"special1":"special2"}}' id="{{item.N}}" bindtap='tapmenu'>
+      <view class="sectionData width25">{{item.N}}</view>
+      <view class="sectionData width25">
+        <view wx:for="{{item.MA}}">
+          <view class='childSection'>{{item}}</view>
+        </view>
+      </view>
+      <view class="sectionData width20">{{item.B?"是":""}}</view>
+      <view class="sectionData width10">{{item.MT===0?"":item.MT}}</view>
+      <view class="sectionData width10">{{item.VE===0?"":item.VE}}</view>
+      <view class="sectionData width10">{{item.SP===0?"":item.SP}}</view>
+    </view>
+  </scroll-view>
+  <view class='flow_right' style='margin-top:40rpx'>
+    <button class='addbtn' bindtap='clearMenu'>清空菜谱</button>
+  </view>
 </view>
-</view>
-
